@@ -5,7 +5,7 @@ import { Loan } from './entities/loan.entity';
 import { Vehicle } from '../vehicles/entities/vehicle.entity';
 import { Valuation } from '../valuations/entities/valuation.entity';
 import { CreateLoanDto } from './dto/create-loan.dto';
-import { UpdateLoanStatusDto } from './dto/update-loan-status.dto';
+import { UpdateLoanStatusDto } from './dto/update-loan.dto';
 
 interface EligibilityResult {
   isEligible: boolean;
@@ -56,7 +56,7 @@ export class LoansService {
         approvedAmount: eligibility.approvedAmount,
         interestRate: eligibility.interestRate,
         monthlyPayment: eligibility.monthlyPayment,
-        rejectionReason: eligibility.isEligible ? null : eligibility.reasons.join(', '),
+        rejectionReason: eligibility.isEligible ? undefined : eligibility.reasons.join(', '),
         eligibilityData: eligibility
       });
 

@@ -79,7 +79,7 @@ async function seed() {
       }
     ];
 
-    const createdVehicles = [];
+    const createdVehicles = <any>[];
     for (const vehicleData of vehicles) {
       const vehicle = await vehiclesService.create(vehicleData);
       createdVehicles.push(vehicle);

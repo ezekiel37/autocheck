@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param, Patch, HttpStatus } from '@nestjs/c
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { LoansService } from './loans.service';
 import { CreateLoanDto } from './dto/create-loan.dto';
-import { UpdateLoanStatusDto } from './dto/update-loan-status.dto';
+import { UpdateLoanStatusDto } from './dto/update-loan.dto';
 
 @ApiTags('loans')
 @Controller('loans')
