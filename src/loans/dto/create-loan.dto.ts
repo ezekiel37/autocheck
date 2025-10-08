@@ -6,6 +6,10 @@ export class CreateLoanDto {
   @IsString()
   vehicleId: string;
 
+  @ApiProperty({ example: '1HGCM82633A123456', description: 'Vehicle Identification Number' })
+  @IsString()
+  vin: string;
+
   @ApiProperty({ example: 'John Doe' })
   @IsString()
   applicantName: string;

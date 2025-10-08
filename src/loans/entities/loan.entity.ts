@@ -9,6 +9,9 @@ export class Loan {
   @Column()
   vehicleId: string;
 
+  @Column()
+  vin: string;
+
   @ManyToOne(() => Vehicle, vehicle => vehicle.loans)
   @JoinColumn({ name: 'vehicleId' })
   vehicle: Vehicle;

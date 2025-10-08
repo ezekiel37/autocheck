@@ -32,10 +32,10 @@ export class VehiclesController {
   }
 
   @Get('vin/:vin')
-  @ApiOperation({ summary: 'Get vehicle by VIN' })
+  @ApiOperation({ summary: 'Get vehicle valuation by VIN' })
   @ApiResponse({ status: HttpStatus.OK, description: 'Returns vehicle details' })
   @ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'Vehicle not found' })
   findByVin(@Param('vin') vin: string) {
-    return this.vehiclesService.findByVin(vin);
+    return this.vehiclesService.getVehicleValuation(vin);
   }
 }
