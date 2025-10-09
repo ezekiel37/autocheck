@@ -1,9 +1,10 @@
 import { Controller, Get, Post, Body, Param, Patch, HttpStatus } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth } from '@nestjs/swagger';
 import { LoansService } from './loans.service';
 import { CreateLoanDto } from './dto/create-loan.dto';
 import { UpdateLoanStatusDto } from './dto/update-loan.dto';
 
+@ApiBearerAuth('access-token')
 @ApiTags('loans')
 @Controller('loans')
 export class LoansController {

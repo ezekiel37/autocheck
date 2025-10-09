@@ -1,8 +1,10 @@
 import { Controller, Get, Post, Body, Param, Patch, HttpStatus } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth } from '@nestjs/swagger';
 import { OffersService } from './offers.service';
 import { CreateOfferDto } from './dto/create-offer.dto';
 
+
+@ApiBearerAuth('access-token')
 @ApiTags('offers')
 @Controller('offers')
 export class OffersController {

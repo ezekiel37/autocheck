@@ -1,8 +1,9 @@
 import { Controller, Get, Post, Body, Param, HttpStatus } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth } from '@nestjs/swagger';
 import { VehiclesService } from './vehicles.service';
 import { CreateVehicleDto } from './dto/create-vehicle.dto';
 
+@ApiBearerAuth('access-token')
 @ApiTags('vehicles')
 @Controller('vehicles')
 export class VehiclesController {

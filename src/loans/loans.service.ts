@@ -73,9 +73,9 @@ export class LoansService {
     const reasons: string[] = [];
     let score = 100;
 
-    const maxLoanAmount = valuation.estimatedValue * 0.8;
+    const maxLoanAmount = valuation.estimatedValue * 0.6
     if (loanDto.requestedAmount > maxLoanAmount) {
-      reasons.push(`Requested amount exceeds 80% of vehicle value (Max: ₦${maxLoanAmount.toLocaleString()})`);
+      reasons.push(`Requested amount exceeds 60% of vehicle value (Max: ₦${maxLoanAmount.toLocaleString()})`);
       score -= 30;
     }
 

@@ -22,6 +22,11 @@ export class CreateLoanDto {
   @IsString()
   applicantPhone: string;
 
+ @ApiProperty({ example: 500000 })
+  @IsNumber()
+  @Min(0)
+  monthlyIncome: number;
+
   @ApiProperty({ example: 5000000 })
   @IsNumber()
   @Min(100000)
@@ -33,8 +38,5 @@ export class CreateLoanDto {
   @Max(84)
   loanTerm: number;
 
-  @ApiProperty({ example: 500000 })
-  @IsNumber()
-  @Min(0)
-  monthlyIncome: number;
+
 }
