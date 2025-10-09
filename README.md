@@ -25,7 +25,7 @@ A comprehensive, production-ready backend API for vehicle valuation and financin
 
 ```bash
 git clone <repository-url>
-cd autochek-api
+cd autocheck
 ```
 
 ### 2. Install Dependencies
