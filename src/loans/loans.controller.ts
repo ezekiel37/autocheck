@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, Patch, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Patch, HttpStatus, Put } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth } from '@nestjs/swagger';
 import { LoansService } from './loans.service';
 import { CreateLoanDto } from './dto/create-loan.dto';
@@ -41,7 +41,7 @@ export class LoansController {
     return this.loansService.findOne(id);
   }
 
-  @Patch(':id/status')
+ @Put(':id/status')
   @ApiOperation({ summary: 'Update loan status' })
   @ApiResponse({ status: HttpStatus.OK, description: 'Loan status updated' })
   @ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'Loan not found' })
